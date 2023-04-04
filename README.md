@@ -30,8 +30,8 @@ I've completed these challenges in various programming languages, including:
 
 - Python
 - Java
-- JavaScript
-- C++
+- JavaScript/Typescript
+- C#
 - Ruby
 
 ## Contributing
