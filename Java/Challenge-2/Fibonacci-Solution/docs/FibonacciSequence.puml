@@ -1,0 +1,24 @@
+@startuml
+
+class Main {
+    + main(args: String[]): void
+    - getValidFibonacciCount(scanner: Scanner): int
+}
+
+class Fibonacci {
+    - UPPER_LIMIT: int
+    - memo: int[]
+    + sequence(n: int): int
+}
+
+class FibonacciPrinter {
+    - n: int
+    + FibonacciPrinter(n: int)
+    + print(): void
+}
+
+Main ..> Scanner: uses
+Main ..> FibonacciPrinter: creates
+FibonacciPrinter ..> Fibonacci: uses
+
+@enduml
