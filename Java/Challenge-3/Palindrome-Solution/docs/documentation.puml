@@ -1,0 +1,32 @@
+@startuml
+
+class Main
+
+interface UserIO {
+  +getInput(): String
+  +showResult(String, boolean): void
+}
+
+class ConsoleUserIO {
+  -scanner: Scanner
+}
+
+interface PalindromeChecker {
+  +isPalindrome(String): boolean
+}
+
+class CachedPalindromeChecker {
+  -palindromes: Set<String>
+  -delegate: PalindromeChecker
+}
+
+class RecursivePalindromeChecker {
+}
+
+Main --> ConsoleUserIO: uses
+Main --> CachedPalindromeChecker: uses
+ConsoleUserIO .up.|> UserIO
+CachedPalindromeChecker .up.|> PalindromeChecker
+RecursivePalindromeChecker .up.|> PalindromeChecker
+CachedPalindromeChecker --> RecursivePalindromeChecker: uses
+@enduml
